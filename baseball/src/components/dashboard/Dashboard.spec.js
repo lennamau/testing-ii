@@ -22,6 +22,18 @@ describe("<Display />", () => {
     expect(getByTestId("hit-btn")).toBeInTheDocument();
   });
 });
+describe('<Display />', () => {
+    it('displays strikes', ()=> {
+        const { getByText } = render (<Dashboard />)
+        expect(getByText(/strikes/i)).toBeInTheDocument()
+    })
+    it('displays balls', ()=> {
+        const { getByText } = render (<Dashboard />)
+        expect(getByText(/balls/i)).toBeInTheDocument()
+    })
+})
+
+
 describe("Add Ball", () => {
   const { getByTestId, getByText } = render(<Dashboard />);
   const selected = getByTestId("balls");
