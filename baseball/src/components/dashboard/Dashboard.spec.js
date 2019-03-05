@@ -24,3 +24,16 @@ describe('<Display />', () => {
     })
 
 })
+describe('add ball', () => {
+    const { getByTestId, getByText } = render(<Dashboard/>)
+    const selected = getByTestId('balls')
+    const button = getByTestId('ballButton')
+    it('Increments ball count', () => {
+        fireEvent.click(button)
+        expect(selected).toHaveTextContent(/Balls: 1/i)
+        fireEvent.click(button)
+        expect(selected).toHaveTextContent(/Balls:2/i)
+        fireEvent.click(button)
+        expect(selected).toHaveTextContent(/Balls:3/i)
+    })
+})
