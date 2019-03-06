@@ -62,14 +62,7 @@ describe("Add strike", () => {
       fireEvent.click(button);
       expect(selected).toHaveTextContent(/Strikes: 0/i);
     });
-    it("Increments strike by 1 on foul unless strikes ===2", () => {
-        fireEvent.click(button);
-        expect(selected).toHaveTextContent(/Strikes: 1/i);
-        fireEvent.click(button);
-        expect(selected).toHaveTextContent(/Strikes: 2/i);
-        fireEvent.click(button);
-        expect(selected).toHaveTextContent(/Strikes: 0/i);
-      });
+   
   });
 
   describe('add foul', () => {
